@@ -36,6 +36,8 @@ tapScreen.addEventListener("click", () => {
   bgVideo.play().catch(() => showContent());
   // Dissolve the DV monogram 2 seconds after tap
   setTimeout(() => tapInner.classList.add("dissolve"), 2000);
+  // Start wedding music (requires user gesture for AudioContext)
+  if (window.initWeddingMusic) window.initWeddingMusic();
 });
 
 /* ── VIDEO → CONTENT REVEAL ───────────────────────────────── */
@@ -174,10 +176,18 @@ function finishScratch() {
   if (revealed) return;
   revealed = true;
   scratch.classList.add("is-done");
-  hintEl.textContent = "Sunday, 15 November 2026";
+  if (hintEl) hintEl.classList.add("hidden"); // fade out the inside-heart hint
+  // Reveal timer smoothly after scratch
+  const cr = document.getElementById("countdownReveal");
+  if (cr) setTimeout(() => cr.classList.add("visible"), 250);
 }
 
-canvas.addEventListener("pointerdown", (e) => { scratching = true; canvas.setPointerCapture(e.pointerId); scratchAt(e); });
+canvas.addEventListener("pointerdown", (e) => {
+  scratching = true;
+  canvas.setPointerCapture(e.pointerId);
+  scratchAt(e);
+  if (hintEl) hintEl.classList.add("hidden"); // hide hint immediately on first touch
+});
 canvas.addEventListener("pointermove", (e) => { if (!scratching) return; scratchAt(e); if (enoughScratched()) finishScratch(); });
 canvas.addEventListener("pointerup",   ()  => { scratching = false; if (enoughScratched()) finishScratch(); });
 window.addEventListener("resize",      ()  => { if (!revealed) paintCover(); });
@@ -253,3 +263,41 @@ document.querySelectorAll(
 setTimeout(() => {
   if (heroInner.style) heroInner.style.transition = "transform 0.18s ease-out";
 }, 2500);
+
+/* ── WEDDING MUSIC ────────────────────────────────────────── */
+(function () {
+  const audio = new Audio("assets/ss.mp3");
+  audio.loop   = true;
+  audio.volume = 0;
+  let muted = false, started = false;
+
+  function fadeIn() {
+    let v = 0;
+    const step = () => {
+      v = Math.min(v + 0.01, 0.55);
+      audio.volume = v;
+      if (v < 0.55) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  window.initWeddingMusic = function () {
+    if (started) return;
+    started = true;
+    audio.play().then(() => {
+      fadeIn();
+      const btn = document.getElementById("muteBtn");
+      if (btn) setTimeout(() => btn.classList.add("active"), 1400);
+    }).catch(e => console.warn("Audio play failed:", e));
+  };
+
+  const btn = document.getElementById("muteBtn");
+  if (btn) {
+    btn.addEventListener("click", () => {
+      muted = !muted;
+      btn.dataset.muted = muted;
+      btn.setAttribute("aria-label", muted ? "Unmute music" : "Mute music");
+      audio.volume = muted ? 0 : 0.55;
+    });
+  }
+})();
