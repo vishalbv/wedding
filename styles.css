@@ -70,8 +70,8 @@ ol {
   /* Lock to small-viewport height (address bar visible).
      When mobile Chrome hides its bar the vh grows, but svh stays
      constant — prevents the video from jumping/resizing on scroll. */
-  height: 100vh;    /* fallback for older browsers */
-  height: 100svh;   /* modern: locked to smallest viewport size */
+  height: 100vh; /* fallback for older browsers */
+  height: 100svh; /* modern: locked to smallest viewport size */
   z-index: 0;
   background: #1a2418;
   overflow: hidden;
@@ -761,7 +761,7 @@ ol {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 14%; /* shift up slightly from heart tip */
+
   pointer-events: none;
   text-align: center;
   font-family: var(--display);
@@ -1704,7 +1704,7 @@ ol {
     margin-bottom: 10px;
   }
   .scratch-inner-hint {
-    font-size: 12px;
+    font-size: clamp(15px, 4vw, 18px);
   }
   /* Smaller date text + breathing room inside heart on mobile */
   .when {
