@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deeksha &amp; Vishal — Wedding Invitation</title>
+    <meta
+      name="description"
+      content="You are invited to the wedding of Deeksha and Vishal on 15th November 2026."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Outfit:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='24'%3E%E2%9D%A4%3C/text%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <!-- ── FIXED VIDEO BACKGROUND ── -->
+    <div class="video-bg">
+      <video
+        id="bgVideo"
+        src="video.mp4"
+        playsinline
+        muted
+        preload="auto"
+      ></video>
+      <div id="videoDim" class="video-dim"></div>
+    </div>
+    <div id="mouseOrb" class="mouse-orb" aria-hidden="true"></div>
+
+    <!-- ── TAP / INTRO SCREEN ── -->
+    <div id="tapScreen" class="tap-screen">
+      <div class="tap-inner">
+        <div class="dv-monogram">
+          <p class="dv-script">DV</p>
+          <p class="dv-sub">Deeksha &amp; Vishal</p>
+        </div>
+        <p class="tap-hint">&#10022;&ensp;Tap to open&ensp;&#10022;</p>
+      </div>
+    </div>
+
+    <!-- ── MAIN INVITATION ── -->
+    <div id="mainContent" class="main-content" aria-hidden="true">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-inner" id="heroInner">
+          <div
+            class="hero-particles"
+            id="heroParticles"
+            aria-hidden="true"
+          ></div>
+          <p class="hero-kicker">We're getting married</p>
+          <div class="rule dark"><span></span><i></i><span></span></div>
+          <h1 class="hero-names">
+            <span class="hero-name">Deeksha</span>
+            <span class="hero-amp">&amp;</span>
+            <span class="hero-name">Vishal</span>
+          </h1>
+          <div class="hero-meta">
+            <span>15th November 2026</span>
+            <span class="meta-dot">·</span>
+            <span>Muhurtham 11:51 AM</span>
+          </div>
+          <p class="hero-venue-line">Shri Chennakeshava Temple, Honnavar</p>
+          <button class="scroll-cue" id="scrollCue" type="button">
+            <span>Scroll to explore</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M6 9l6 6 6-6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.4"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="hero-fade-bottom" aria-hidden="true"></div>
+      </section>
+
+      <!-- WELCOME BAND -->
+      <section class="welcome" id="welcome">
+        <div
+          class="section-photo-bg"
+          aria-hidden="true"
+          style="
+            background-image: url(&quot;assets/DSC_6001.png&quot;);
+            --photo-pos: center 38%;
+            --photo-opacity: 0.36;
+            --mask: radial-gradient(
+              ellipse 95% 60% at 50% 48%,
+              black 5%,
+              transparent 55%
+            );
+          "
+        ></div>
+        <div class="inner">
+          <div class="rule light"><span></span><i></i><span></span></div>
+          <p>
+            With full hearts and the blessings of our families, we joyfully
+            invite you to stand with us as we begin our life together. Your
+            presence is our greatest blessing.
+          </p>
+          <div class="rule light"><span></span><i></i><span></span></div>
+        </div>
+      </section>
+
+      <!-- DATE REVEAL + COUNTDOWN -->
+      <section class="section dual-section warm" id="dateCountdown">
+        <div class="dual-grid">
+          <div class="dual-cell">
+            <img
+              class="cell-portrait"
+              src="assets/DSC_5678.jpg"
+              alt=""
+              aria-hidden="true"
+            />
+            <div class="dual-cell-body">
+              <p class="script-title">Our forever begins</p>
+              <p class="hint" id="scratchHint">
+                Scratch the heart to reveal the date
+              </p>
+              <div class="scratch" id="scratch">
+                <div class="scratch-face">
+                  <p class="invited">You are invited</p>
+                  <p class="when">15 November<br />2026</p>
+                  <p class="dayline">11:51 in the morning</p>
+                </div>
+                <canvas
+                  id="scratchCanvas"
+                  aria-label="Scratch to reveal the wedding date"
+                ></canvas>
+              </div>
+              <a
+                class="pill"
+                id="saveDate"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Save the date</a
+              >
+            </div>
+          </div>
+
+          <div class="dual-cell">
+            <img
+              class="cell-portrait"
+              src="assets/DSC_6048-2.jpg"
+              alt=""
+              aria-hidden="true"
+            />
+            <div class="dual-cell-body">
+              <p class="eyebrow">Until we say I do</p>
+              <div class="ticks" id="ticks">
+                <div class="tick-row tick-single">
+                  <div>
+                    <strong data-unit="days">00</strong><span>Days</span>
+                  </div>
+                </div>
+                <div class="tick-row tick-triple">
+                  <div>
+                    <strong data-unit="hours">00</strong><span>Hours</span>
+                  </div>
+                  <div>
+                    <strong data-unit="minutes">00</strong><span>Minutes</span>
+                  </div>
+                  <div>
+                    <strong data-unit="seconds">00</strong><span>Seconds</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROGRAM -->
+      <section class="section dark" id="timeline">
+        <div class="inner narrow">
+          <h2>Program</h2>
+          <div class="rule gold"><span></span><i></i><span></span></div>
+          <ol class="timeline" id="timelineList"></ol>
+        </div>
+      </section>
+
+      <!-- VENUES -->
+      <section class="section" id="venue">
+        <div class="inner">
+          <h2>Venues</h2>
+          <div class="rule gold"><span></span><i></i><span></span></div>
+          <div class="venues-grid">
+            <div class="venue-card">
+              <p class="venue-badge">Wedding &nbsp;·&nbsp; 15 November</p>
+              <p class="place-name">Shri Chennakeshava Temple</p>
+              <p class="place-address">
+                Kangodu, Dibbangal, Honnavar<br />Uttara Kannada, Karnataka –
+                581334
+              </p>
+              <div class="map-frame">
+                <iframe
+                  title="Wedding venue map"
+                  src="https://maps.google.com/maps?q=Shri+Chennakeshava+Temple+Kangodu+Honnavar+Karnataka&z=13&output=embed"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+              <a
+                class="pill"
+                href="https://www.google.com/maps/search/?api=1&query=Shri+Chennakeshava+Temple+Kangodu+Dibbangal+Honnavar+Karnataka"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Open in Google Maps</a
+              >
+            </div>
+
+            <div class="venue-card">
+              <p class="venue-badge">Reception &nbsp;·&nbsp; 16 November</p>
+              <p class="place-name">Billodi</p>
+              <p class="venue-sub">Groom's Home</p>
+              <p class="place-address">
+                Hosnagara, Shivamogga<br />Karnataka – 577418
+              </p>
+              <div class="map-frame">
+                <iframe
+                  title="Reception venue map"
+                  src="https://maps.google.com/maps?q=Billodi+Hosnagara+Shivamogga+Karnataka&z=13&output=embed"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+              <a
+                class="pill"
+                href="https://www.google.com/maps/search/?api=1&query=Billodi+Hosnagara+Shivamogga+Karnataka"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Open in Google Maps</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section class="section dark" id="gallery">
+        <div class="inner">
+          <h2>A few frames</h2>
+          <div class="rule gold"><span></span><i></i><span></span></div>
+          <div class="frames">
+            <figure>
+              <img
+                src="assets/DSC_2125.jpg"
+                alt="Deeksha"
+                loading="lazy"
+                style="object-position: center 12%"
+              />
+              <figcaption>Deeksha</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="assets/DSC_6048-2.jpg"
+                alt="Vishal"
+                loading="lazy"
+                style="object-position: 42% 18%"
+              />
+              <figcaption>Vishal</figcaption>
+            </figure>
+            <figure class="wide">
+              <img
+                src="assets/DSC_6001.jpg"
+                alt="Together"
+                loading="lazy"
+                style="object-position: center 38%"
+              />
+              <figcaption>Deeksha &amp; Vishal</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="assets/DSC_5720.jpg"
+                alt="Mehendi"
+                loading="lazy"
+                style="object-position: center 28%"
+              />
+              <figcaption>Mehendi</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="assets/DSC_6154.jpg"
+                alt="Together"
+                loading="lazy"
+                style="object-position: center 12%"
+              />
+              <figcaption>Together</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- GIFTS -->
+      <section class="section dark" id="gifts">
+        <div
+          class="section-photo-bg"
+          aria-hidden="true"
+          style="
+            background-image: url(&quot;assets/DSC_6154.jpg&quot;);
+            --photo-pos: center 14%;
+            --photo-opacity: 0.28;
+            --mask: radial-gradient(
+              ellipse 55% 70% at 50% 30%,
+              black 8%,
+              transparent 60%
+            );
+          "
+        ></div>
+        <div class="inner narrow">
+          <h2>Gifts</h2>
+          <div class="rule gold"><span></span><i></i><span></span></div>
+          <p class="lede">
+            Your blessings and presence are the greatest gifts we could ask for.
+            If you still wish to give, a note in the book of wishes means more
+            than anything wrapped.
+          </p>
+        </div>
+      </section>
+
+      <footer class="colophon">
+        <p>Deeksha &amp; Vishal</p>
+        <p>15 November 2026 &nbsp;·&nbsp; Karnataka</p>
+      </footer>
+    </div>
+    <!-- /mainContent -->
+
+    <script src="invitation.js"></script>
+  </body>
+</html>
