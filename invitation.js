@@ -1,3 +1,9 @@
+/* ── ALWAYS START FROM TOP & LOCK SCROLL UNTIL HERO LOADS ─── */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+document.documentElement.style.overflow = 'hidden';
+document.body.style.overflow = 'hidden';
+
 const wedding = {
   bride:     "Deeksha",
   groom:     "Vishal",
@@ -56,7 +62,14 @@ function showContent() {
   mainContent.removeAttribute("aria-hidden");
 
   // hero text fades in a beat after the content wrapper
-  setTimeout(() => heroInner.classList.add("visible"), 300);
+  setTimeout(() => {
+    heroInner.classList.add("visible");
+    // Unlock scroll once the hero title animation completes (1.3s transition + buffer)
+    setTimeout(() => {
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+    }, 1400);
+  }, 300);
 
   // Repaint scratch canvas — it ran at page load when the section was hidden
   // (opacity:0 elements can have 0 canvas rect), so repaint once layout is live
@@ -216,14 +229,20 @@ if (form) {
 /* ── MOUSE ORB ────────────────────────────────────────────── */
 const mouseOrb = document.getElementById("mouseOrb");
 
+let mouseCX = 0, mouseCY = 0, orbRaf = null;
 document.addEventListener("mousemove", (e) => {
-  mouseOrb.style.left = e.clientX + "px";
-  mouseOrb.style.top  = e.clientY + "px";
-  if (heroInner.classList.contains("visible")) {
-    const x = (e.clientX / window.innerWidth  - 0.5) * 16;
-    const y = (e.clientY / window.innerHeight - 0.5) * 10;
-    heroInner.style.transform = `translate(${x}px, ${y}px)`;
-  }
+  mouseCX = e.clientX;
+  mouseCY = e.clientY;
+  if (orbRaf) return;
+  orbRaf = requestAnimationFrame(() => {
+    mouseOrb.style.transform = `translate(${mouseCX - 350}px, ${mouseCY - 350}px)`;
+    if (heroInner.classList.contains("visible")) {
+      const x = (mouseCX / window.innerWidth  - 0.5) * 16;
+      const y = (mouseCY / window.innerHeight - 0.5) * 10;
+      heroInner.style.transform = `translate(${x}px, ${y}px)`;
+    }
+    orbRaf = null;
+  });
 });
 
 /* ── HERO PARTICLES ───────────────────────────────────────── */

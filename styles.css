@@ -273,14 +273,15 @@ ol {
   animation: initialGlow 3.2s ease-in-out infinite;
 }
 @keyframes initialGlow {
-  0%, 100% {
+  0%,
+  100% {
     color: #c87a5a;
     filter: drop-shadow(0 0 6px rgba(210, 150, 80, 0.35));
   }
   50% {
     color: #f0d070;
     filter: drop-shadow(0 0 22px rgba(240, 200, 80, 0.75))
-            drop-shadow(0 0 40px rgba(240, 180, 60, 0.35));
+      drop-shadow(0 0 40px rgba(240, 180, 60, 0.35));
   }
 }
 .hero-meta {
@@ -643,7 +644,7 @@ ol {
   /* top padding controls where BOTH titles begin — same Y on both sides */
   padding: clamp(80px, 10vh, 130px) clamp(28px, 5vw, 80px)
     clamp(60px, 8vh, 100px);
-  min-height: 110vh;
+  min-height: 88vh;
   text-align: center;
   background: transparent;
   display: flex;
@@ -1012,6 +1013,7 @@ ol {
 @media (max-width: 720px) {
   .venues-grid {
     grid-template-columns: 1fr;
+    gap: 60px;
   }
 }
 .venue-card {
@@ -1309,12 +1311,11 @@ ol {
   );
   pointer-events: none;
   z-index: 3;
-  transform: translate(-50%, -50%);
-  top: 50vh;
-  left: 50vw;
-  transition:
-    left 0.55s ease,
-    top 0.55s ease;
+  top: 0;
+  left: 0;
+  transform: translate(calc(50vw - 350px), calc(50vh - 350px));
+  will-change: transform;
+  transition: transform 0.55s ease;
   mix-blend-mode: screen;
 }
 
@@ -1571,5 +1572,132 @@ ol {
   *::after {
     animation: none !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   MOBILE  (≤ 768px)
+───────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* ── WELCOME: only bride portrait, centred ── */
+  .welcome .welcome-photo-right {
+    display: none;
+  }
+  .welcome .welcome-photo-left {
+    --photo-size: auto 100%;
+    --photo-pos: center 6%;
+    --photo-opacity: 0.45;
+    --mask: radial-gradient(
+      ellipse 85% 88% at 50% 36%,
+      black 14%,
+      transparent 62%
+    );
+  }
+
+  /* ── DATE+COUNTDOWN: full-width portraits as section background ── */
+
+  /* Grid becomes an absolute overlay filling the entire section.
+     Cells (position:static) stop being containing blocks so
+     cell-portrait (position:absolute) anchors to the section. */
+  #dateCountdown {
+    min-height: 82vh;
+    overflow: hidden;
+  }
+  #dateCountdown .dual-grid {
+    position: absolute !important;
+    inset: 0;
+    grid-template-columns: 1fr 1fr !important;
+    z-index: 0;
+    pointer-events: none;
+  }
+  #dateCountdown .dual-cell {
+    position: static; /* removes containing block — portraits go to section */
+    overflow: visible;
+    min-height: 0;
+    padding: 0;
+    border: none !important;
+  }
+  #dateCountdown .dual-cell + .dual-cell {
+    border: none !important;
+  }
+
+  /* Bride — top-left, full section coordinates */
+  .dual-cell:first-child .cell-portrait {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    height: 62%;
+    width: auto;
+    opacity: 0.55;
+    -webkit-mask-image: radial-gradient(
+      ellipse 95% 80% at 28% 24%,
+      black 14%,
+      transparent 58%
+    );
+    mask-image: radial-gradient(
+      ellipse 95% 80% at 28% 24%,
+      black 14%,
+      transparent 58%
+    );
+  }
+
+  /* Groom — bottom-right, full section coordinates */
+  .dual-cell:last-child .cell-portrait {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: -58px;
+    top: 50%;
+    height: 62%;
+    width: auto;
+    opacity: 0.52;
+    -webkit-mask-image: radial-gradient(
+      ellipse 95% 88% at 76% 47%,
+      black 15%,
+      transparent 58%
+    );
+    mask-image: radial-gradient(
+      ellipse 95% 88% at 76% 47%,
+      black 15%,
+      transparent 58%
+    );
+  }
+
+  /* Hide cell body text and witty quotes on mobile */
+  .dual-cell-body {
+    display: none;
+  }
+  .cell-bottom-text {
+    display: none;
+  }
+
+  /* Heart + timer overlay — compact for mobile */
+  .date-center-overlay {
+    width: min(200px, 68vw);
+    top: clamp(50px, 26vh, 257px);
+    gap: 8px;
+    z-index: 10;
+  }
+  .scratch {
+    width: min(170px, 58vw);
+    height: 156px;
+    margin-bottom: 10px;
+  }
+  .scratch-inner-hint {
+    font-size: 13px;
+  }
+  .tick-single > div {
+    min-width: clamp(66px, 16vw, 100px);
+  }
+  .tick-triple > div {
+    min-width: clamp(42px, 10vw, 66px);
+  }
+  .tick-single strong {
+    font-size: clamp(20px, 5vw, 28px);
+  }
+  .tick-triple strong {
+    font-size: clamp(13px, 3vw, 17px);
   }
 }

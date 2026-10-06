@@ -28,23 +28,46 @@
         src="video.mp4"
         playsinline
         muted
-        preload="auto"
+        preload="metadata"
       ></video>
       <div id="videoDim" class="video-dim"></div>
     </div>
     <div id="mouseOrb" class="mouse-orb" aria-hidden="true"></div>
 
     <!-- ── MUSIC TOGGLE ── -->
-    <button id="muteBtn" class="music-toggle" aria-label="Mute music" data-muted="false">
-      <svg class="icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+    <button
+      id="muteBtn"
+      class="music-toggle"
+      aria-label="Mute music"
+      data-muted="false"
+    >
+      <svg
+        class="icon-sound"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
       </svg>
-      <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-        <line x1="23" y1="9" x2="17" y2="15"/>
-        <line x1="17" y1="9" x2="23" y2="15"/>
+      <svg
+        class="icon-muted"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+        <line x1="23" y1="9" x2="17" y2="15" />
+        <line x1="17" y1="9" x2="23" y2="15" />
       </svg>
     </button>
 
@@ -72,9 +95,13 @@
           <p class="hero-kicker">We're getting married</p>
           <div class="rule dark"><span></span><i></i><span></span></div>
           <h1 class="hero-names">
-            <span class="hero-name"><span class="hero-initial">D</span>eeksha</span>
+            <span class="hero-name"
+              ><span class="hero-initial">D</span>eeksha</span
+            >
             <span class="hero-amp">&amp;</span>
-            <span class="hero-name"><span class="hero-initial">V</span>ishal</span>
+            <span class="hero-name"
+              ><span class="hero-initial">V</span>ishal</span
+            >
           </h1>
           <button class="scroll-cue" id="scrollCue" type="button">
             <span>Scroll to explore</span>
@@ -94,47 +121,129 @@
       <!-- WELCOME BAND -->
       <section class="welcome" id="welcome">
         <!-- Left portrait: DSC_5691 -->
-        <div class="welcome-photo welcome-photo-left" aria-hidden="true"
-             style="background-image:url('assets/DSC_5691.jpg')"></div>
+        <div
+          class="welcome-photo welcome-photo-left"
+          aria-hidden="true"
+          style="background-image: url(&quot;assets/DSC_5691.jpg&quot;)"
+        ></div>
         <!-- Right portrait: DSC_5720 -->
-        <div class="welcome-photo welcome-photo-right" aria-hidden="true"
-             style="background-image:url('assets/DSC_5720.jpg')"></div>
+        <div
+          class="welcome-photo welcome-photo-right"
+          aria-hidden="true"
+          style="background-image: url(&quot;assets/DSC_5720.jpg&quot;)"
+        ></div>
         <!-- Dark center vignette -->
         <div class="welcome-center-dim" aria-hidden="true"></div>
         <!-- Botanical corner decorations -->
-        <svg class="botanical-decor top-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" stroke-width="0.9">
-          <path d="M15 195 C35 165 60 140 85 115 C110 90 138 70 162 42"/>
-          <path d="M52 160 C44 144 40 127 46 112"/>
-          <path d="M97 118 C86 102 83 84 89 68"/>
-          <path d="M143 77 C134 62 131 46 137 32"/>
-          <path d="M46 168 C38 159 34 147 40 138 C49 145 51 157 46 168z"/>
-          <path d="M62 153 C70 144 81 142 85 150 C77 157 64 156 62 153z"/>
-          <path d="M91 123 C82 113 79 101 86 93 C95 99 97 112 91 123z"/>
-          <path d="M107 108 C115 100 126 99 130 106 C122 115 108 114 107 108z"/>
-          <path d="M140 83 C131 73 128 61 135 53 C144 59 146 72 140 83z"/>
-          <path d="M153 68 C162 61 173 59 177 67 C168 76 154 75 153 68z"/>
-          <g transform="translate(162,42)"><circle r="4.5"/><ellipse cy="-9" rx="3.5" ry="7"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(72)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(144)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(216)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(288)"/></g>
-          <g transform="translate(46,112)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <g transform="translate(89,68)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <g transform="translate(137,32)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <circle cx="68" cy="143" r="2"/><circle cx="112" cy="100" r="2"/><circle cx="156" cy="57" r="2"/>
+        <svg
+          class="botanical-decor top-right"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 200 200"
+          aria-hidden="true"
+          stroke-width="0.9"
+        >
+          <path d="M15 195 C35 165 60 140 85 115 C110 90 138 70 162 42" />
+          <path d="M52 160 C44 144 40 127 46 112" />
+          <path d="M97 118 C86 102 83 84 89 68" />
+          <path d="M143 77 C134 62 131 46 137 32" />
+          <path d="M46 168 C38 159 34 147 40 138 C49 145 51 157 46 168z" />
+          <path d="M62 153 C70 144 81 142 85 150 C77 157 64 156 62 153z" />
+          <path d="M91 123 C82 113 79 101 86 93 C95 99 97 112 91 123z" />
+          <path
+            d="M107 108 C115 100 126 99 130 106 C122 115 108 114 107 108z"
+          />
+          <path d="M140 83 C131 73 128 61 135 53 C144 59 146 72 140 83z" />
+          <path d="M153 68 C162 61 173 59 177 67 C168 76 154 75 153 68z" />
+          <g transform="translate(162,42)">
+            <circle r="4.5" />
+            <ellipse cy="-9" rx="3.5" ry="7" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(72)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(144)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(216)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(288)" />
+          </g>
+          <g transform="translate(46,112)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <g transform="translate(89,68)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <g transform="translate(137,32)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <circle cx="68" cy="143" r="2" />
+          <circle cx="112" cy="100" r="2" />
+          <circle cx="156" cy="57" r="2" />
         </svg>
-        <svg class="botanical-decor top-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" stroke-width="0.9">
-          <path d="M15 195 C35 165 60 140 85 115 C110 90 138 70 162 42"/>
-          <path d="M52 160 C44 144 40 127 46 112"/>
-          <path d="M97 118 C86 102 83 84 89 68"/>
-          <path d="M143 77 C134 62 131 46 137 32"/>
-          <path d="M46 168 C38 159 34 147 40 138 C49 145 51 157 46 168z"/>
-          <path d="M62 153 C70 144 81 142 85 150 C77 157 64 156 62 153z"/>
-          <path d="M91 123 C82 113 79 101 86 93 C95 99 97 112 91 123z"/>
-          <path d="M107 108 C115 100 126 99 130 106 C122 115 108 114 107 108z"/>
-          <path d="M140 83 C131 73 128 61 135 53 C144 59 146 72 140 83z"/>
-          <path d="M153 68 C162 61 173 59 177 67 C168 76 154 75 153 68z"/>
-          <g transform="translate(162,42)"><circle r="4.5"/><ellipse cy="-9" rx="3.5" ry="7"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(72)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(144)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(216)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(288)"/></g>
-          <g transform="translate(46,112)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <g transform="translate(89,68)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <g transform="translate(137,32)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <circle cx="68" cy="143" r="2"/><circle cx="112" cy="100" r="2"/><circle cx="156" cy="57" r="2"/>
+        <svg
+          class="botanical-decor top-left"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 200 200"
+          aria-hidden="true"
+          stroke-width="0.9"
+        >
+          <path d="M15 195 C35 165 60 140 85 115 C110 90 138 70 162 42" />
+          <path d="M52 160 C44 144 40 127 46 112" />
+          <path d="M97 118 C86 102 83 84 89 68" />
+          <path d="M143 77 C134 62 131 46 137 32" />
+          <path d="M46 168 C38 159 34 147 40 138 C49 145 51 157 46 168z" />
+          <path d="M62 153 C70 144 81 142 85 150 C77 157 64 156 62 153z" />
+          <path d="M91 123 C82 113 79 101 86 93 C95 99 97 112 91 123z" />
+          <path
+            d="M107 108 C115 100 126 99 130 106 C122 115 108 114 107 108z"
+          />
+          <path d="M140 83 C131 73 128 61 135 53 C144 59 146 72 140 83z" />
+          <path d="M153 68 C162 61 173 59 177 67 C168 76 154 75 153 68z" />
+          <g transform="translate(162,42)">
+            <circle r="4.5" />
+            <ellipse cy="-9" rx="3.5" ry="7" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(72)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(144)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(216)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(288)" />
+          </g>
+          <g transform="translate(46,112)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <g transform="translate(89,68)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <g transform="translate(137,32)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <circle cx="68" cy="143" r="2" />
+          <circle cx="112" cy="100" r="2" />
+          <circle cx="156" cy="57" r="2" />
         </svg>
         <div class="inner">
           <div class="rule light"><span></span><i></i><span></span></div>
@@ -149,21 +258,30 @@
 
       <!-- DATE REVEAL + COUNTDOWN -->
       <section class="section dual-section warm" id="dateCountdown">
-
         <!-- Centered overlay: heart → save date → timer (timer hidden until scratch) -->
         <div class="date-center-overlay">
           <div class="scratch" id="scratch">
             <div class="scratch-face">
-              <p class="when">15 November<br>2026</p>
+              <p class="when">15 November<br />2026</p>
             </div>
-            <canvas id="scratchCanvas" aria-label="Scratch to reveal the wedding date"></canvas>
+            <canvas
+              id="scratchCanvas"
+              aria-label="Scratch to reveal the wedding date"
+            ></canvas>
             <!-- Hint sits above the canvas, inside the heart — hidden on first touch -->
             <div class="scratch-inner-hint" id="scratchHint">
-              <span>Scratch to<br>reveal the date</span>
+              <span>Scratch to<br />reveal the date</span>
             </div>
           </div>
           <!-- Save date always visible, right below heart -->
-          <a class="pill" id="saveDate" href="#" target="_blank" rel="noopener noreferrer">Save the date</a>
+          <a
+            class="pill"
+            id="saveDate"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Save the date</a
+          >
           <!-- Timer: no space when hidden, expands after scratch -->
           <div class="countdown-reveal" id="countdownReveal">
             <div class="ticks" id="ticks">
@@ -171,9 +289,15 @@
                 <div><strong data-unit="days">00</strong><span>Days</span></div>
               </div>
               <div class="tick-row tick-triple">
-                <div><strong data-unit="hours">00</strong><span>Hours</span></div>
-                <div><strong data-unit="minutes">00</strong><span>Minutes</span></div>
-                <div><strong data-unit="seconds">00</strong><span>Seconds</span></div>
+                <div>
+                  <strong data-unit="hours">00</strong><span>Hours</span>
+                </div>
+                <div>
+                  <strong data-unit="minutes">00</strong><span>Minutes</span>
+                </div>
+                <div>
+                  <strong data-unit="seconds">00</strong><span>Seconds</span>
+                </div>
               </div>
             </div>
           </div>
@@ -181,78 +305,187 @@
 
         <div class="dual-grid">
           <div class="dual-cell">
-            <img class="cell-portrait" src="assets/DSC_5678.jpg" alt="" aria-hidden="true">
+            <img
+              class="cell-portrait"
+              src="assets/DSC_5678.jpg"
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+            />
             <div class="cell-bottom-text">
               <p>"Well, this escalated beautifully."</p>
-              <p>"Now we're counting down to it."</p>
             </div>
           </div>
 
           <div class="dual-cell">
-            <img class="cell-portrait" src="assets/DSC_6048-2.jpg" alt="" aria-hidden="true">
+            <img
+              class="cell-portrait"
+              src="assets/DSC_6048-2.jpg"
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+            />
             <div class="cell-bottom-text">
-              <p>"Somehow, this became a wedding."</p>
-              <p>"And apparently, there's a countdown."</p>
+              <p>"Now we're counting down to it."</p>
             </div>
           </div>
         </div>
-
       </section>
 
       <!-- PROGRAM -->
       <section class="section dark" id="timeline">
-        <div class="floral-bg" aria-hidden="true" style="background-image:url('assets/floral_marigold.jpg');--floral-pos:center 30%;--floral-opacity:0.13;"></div>
-        <svg class="botanical-decor top-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" stroke-width="0.9">
-          <path d="M15 195 C35 165 60 140 85 115 C110 90 138 70 162 42"/>
-          <path d="M52 160 C44 144 40 127 46 112"/>
-          <path d="M97 118 C86 102 83 84 89 68"/>
-          <path d="M143 77 C134 62 131 46 137 32"/>
-          <path d="M46 168 C38 159 34 147 40 138 C49 145 51 157 46 168z"/>
-          <path d="M62 153 C70 144 81 142 85 150 C77 157 64 156 62 153z"/>
-          <path d="M91 123 C82 113 79 101 86 93 C95 99 97 112 91 123z"/>
-          <path d="M107 108 C115 100 126 99 130 106 C122 115 108 114 107 108z"/>
-          <path d="M140 83 C131 73 128 61 135 53 C144 59 146 72 140 83z"/>
-          <g transform="translate(162,42)"><circle r="4.5"/><ellipse cy="-9" rx="3.5" ry="7"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(72)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(144)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(216)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(288)"/></g>
-          <g transform="translate(46,112)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <g transform="translate(89,68)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <g transform="translate(137,32)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <circle cx="68" cy="143" r="2"/><circle cx="112" cy="100" r="2"/><circle cx="156" cy="57" r="2"/>
+        <div
+          class="floral-bg"
+          aria-hidden="true"
+          style="
+            background-image: url(&quot;assets/floral_marigold.jpg&quot;);
+            --floral-pos: center 30%;
+            --floral-opacity: 0.13;
+          "
+        ></div>
+        <svg
+          class="botanical-decor top-right"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 200 200"
+          aria-hidden="true"
+          stroke-width="0.9"
+        >
+          <path d="M15 195 C35 165 60 140 85 115 C110 90 138 70 162 42" />
+          <path d="M52 160 C44 144 40 127 46 112" />
+          <path d="M97 118 C86 102 83 84 89 68" />
+          <path d="M143 77 C134 62 131 46 137 32" />
+          <path d="M46 168 C38 159 34 147 40 138 C49 145 51 157 46 168z" />
+          <path d="M62 153 C70 144 81 142 85 150 C77 157 64 156 62 153z" />
+          <path d="M91 123 C82 113 79 101 86 93 C95 99 97 112 91 123z" />
+          <path
+            d="M107 108 C115 100 126 99 130 106 C122 115 108 114 107 108z"
+          />
+          <path d="M140 83 C131 73 128 61 135 53 C144 59 146 72 140 83z" />
+          <g transform="translate(162,42)">
+            <circle r="4.5" />
+            <ellipse cy="-9" rx="3.5" ry="7" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(72)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(144)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(216)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(288)" />
+          </g>
+          <g transform="translate(46,112)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <g transform="translate(89,68)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <g transform="translate(137,32)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <circle cx="68" cy="143" r="2" />
+          <circle cx="112" cy="100" r="2" />
+          <circle cx="156" cy="57" r="2" />
         </svg>
-        <svg class="botanical-decor top-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" stroke-width="0.9">
-          <path d="M15 195 C35 165 60 140 85 115 C110 90 138 70 162 42"/>
-          <path d="M52 160 C44 144 40 127 46 112"/>
-          <path d="M97 118 C86 102 83 84 89 68"/>
-          <path d="M143 77 C134 62 131 46 137 32"/>
-          <path d="M46 168 C38 159 34 147 40 138 C49 145 51 157 46 168z"/>
-          <path d="M62 153 C70 144 81 142 85 150 C77 157 64 156 62 153z"/>
-          <path d="M91 123 C82 113 79 101 86 93 C95 99 97 112 91 123z"/>
-          <path d="M107 108 C115 100 126 99 130 106 C122 115 108 114 107 108z"/>
-          <path d="M140 83 C131 73 128 61 135 53 C144 59 146 72 140 83z"/>
-          <g transform="translate(162,42)"><circle r="4.5"/><ellipse cy="-9" rx="3.5" ry="7"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(72)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(144)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(216)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(288)"/></g>
-          <g transform="translate(46,112)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <g transform="translate(89,68)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <g transform="translate(137,32)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <circle cx="68" cy="143" r="2"/><circle cx="112" cy="100" r="2"/><circle cx="156" cy="57" r="2"/>
+        <svg
+          class="botanical-decor top-left"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 200 200"
+          aria-hidden="true"
+          stroke-width="0.9"
+        >
+          <path d="M15 195 C35 165 60 140 85 115 C110 90 138 70 162 42" />
+          <path d="M52 160 C44 144 40 127 46 112" />
+          <path d="M97 118 C86 102 83 84 89 68" />
+          <path d="M143 77 C134 62 131 46 137 32" />
+          <path d="M46 168 C38 159 34 147 40 138 C49 145 51 157 46 168z" />
+          <path d="M62 153 C70 144 81 142 85 150 C77 157 64 156 62 153z" />
+          <path d="M91 123 C82 113 79 101 86 93 C95 99 97 112 91 123z" />
+          <path
+            d="M107 108 C115 100 126 99 130 106 C122 115 108 114 107 108z"
+          />
+          <path d="M140 83 C131 73 128 61 135 53 C144 59 146 72 140 83z" />
+          <g transform="translate(162,42)">
+            <circle r="4.5" />
+            <ellipse cy="-9" rx="3.5" ry="7" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(72)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(144)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(216)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(288)" />
+          </g>
+          <g transform="translate(46,112)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <g transform="translate(89,68)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <g transform="translate(137,32)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <circle cx="68" cy="143" r="2" />
+          <circle cx="112" cy="100" r="2" />
+          <circle cx="156" cy="57" r="2" />
         </svg>
         <!-- Lotus watermark behind content -->
-        <svg class="botanical-decor center-watermark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" aria-hidden="true" stroke-width="0.8">
-          <path d="M150 145 C140 118 135 92 150 65 C165 92 160 118 150 145z"/>
-          <path d="M150 145 C169 128 184 110 198 86 C176 72 158 98 150 145z"/>
-          <path d="M150 145 C131 128 116 110 102 86 C124 72 142 98 150 145z"/>
-          <path d="M150 145 C178 142 200 134 214 112 C200 92 178 108 150 145z"/>
-          <path d="M150 145 C122 142 100 134 86 112 C100 92 122 108 150 145z"/>
-          <path d="M150 145 C185 150 208 158 220 180 C204 200 182 192 150 145z"/>
-          <path d="M150 145 C115 150 92 158 80 180 C96 200 118 192 150 145z"/>
-          <path d="M150 145 C180 166 192 182 190 208 C167 220 154 202 150 145z"/>
-          <path d="M150 145 C120 166 108 182 110 208 C133 220 146 202 150 145z"/>
-          <circle cx="150" cy="145" r="20"/>
-          <circle cx="150" cy="145" r="10"/>
-          <path d="M108 165 C85 158 68 143 63 122 C87 118 107 134 108 165z"/>
-          <path d="M192 165 C215 158 232 143 237 122 C213 118 193 134 192 165z"/>
-          <line x1="150" y1="165" x2="150" y2="245"/>
-          <path d="M118 202 C130 196 143 193 150 202"/>
-          <path d="M182 218 C170 212 157 209 150 218"/>
-          <path d="M60 250 Q150 242 240 250" stroke-opacity="0.5"/>
+        <svg
+          class="botanical-decor center-watermark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 300 300"
+          aria-hidden="true"
+          stroke-width="0.8"
+        >
+          <path d="M150 145 C140 118 135 92 150 65 C165 92 160 118 150 145z" />
+          <path d="M150 145 C169 128 184 110 198 86 C176 72 158 98 150 145z" />
+          <path d="M150 145 C131 128 116 110 102 86 C124 72 142 98 150 145z" />
+          <path
+            d="M150 145 C178 142 200 134 214 112 C200 92 178 108 150 145z"
+          />
+          <path d="M150 145 C122 142 100 134 86 112 C100 92 122 108 150 145z" />
+          <path
+            d="M150 145 C185 150 208 158 220 180 C204 200 182 192 150 145z"
+          />
+          <path d="M150 145 C115 150 92 158 80 180 C96 200 118 192 150 145z" />
+          <path
+            d="M150 145 C180 166 192 182 190 208 C167 220 154 202 150 145z"
+          />
+          <path
+            d="M150 145 C120 166 108 182 110 208 C133 220 146 202 150 145z"
+          />
+          <circle cx="150" cy="145" r="20" />
+          <circle cx="150" cy="145" r="10" />
+          <path d="M108 165 C85 158 68 143 63 122 C87 118 107 134 108 165z" />
+          <path
+            d="M192 165 C215 158 232 143 237 122 C213 118 193 134 192 165z"
+          />
+          <line x1="150" y1="165" x2="150" y2="245" />
+          <path d="M118 202 C130 196 143 193 150 202" />
+          <path d="M182 218 C170 212 157 209 150 218" />
+          <path d="M60 250 Q150 242 240 250" stroke-opacity="0.5" />
         </svg>
         <div class="inner narrow">
           <h2>Program</h2>
@@ -263,38 +496,122 @@
 
       <!-- VENUES -->
       <section class="section" id="venue">
-        <div class="floral-bg" aria-hidden="true" style="background-image:url('assets/floral_petals.jpg');--floral-pos:center 50%;--floral-opacity:0.11;"></div>
-        <svg class="botanical-decor top-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" stroke-width="0.9">
-          <path d="M15 195 C35 165 60 140 85 115 C110 90 138 70 162 42"/>
-          <path d="M52 160 C44 144 40 127 46 112"/>
-          <path d="M97 118 C86 102 83 84 89 68"/>
-          <path d="M143 77 C134 62 131 46 137 32"/>
-          <path d="M46 168 C38 159 34 147 40 138 C49 145 51 157 46 168z"/>
-          <path d="M62 153 C70 144 81 142 85 150 C77 157 64 156 62 153z"/>
-          <path d="M91 123 C82 113 79 101 86 93 C95 99 97 112 91 123z"/>
-          <path d="M107 108 C115 100 126 99 130 106 C122 115 108 114 107 108z"/>
-          <path d="M140 83 C131 73 128 61 135 53 C144 59 146 72 140 83z"/>
-          <g transform="translate(162,42)"><circle r="4.5"/><ellipse cy="-9" rx="3.5" ry="7"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(72)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(144)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(216)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(288)"/></g>
-          <g transform="translate(46,112)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <g transform="translate(89,68)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <g transform="translate(137,32)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <circle cx="68" cy="143" r="2"/><circle cx="112" cy="100" r="2"/><circle cx="156" cy="57" r="2"/>
+        <div
+          class="floral-bg"
+          aria-hidden="true"
+          style="
+            background-image: url(&quot;assets/floral_petals.jpg&quot;);
+            --floral-pos: center 50%;
+            --floral-opacity: 0.11;
+          "
+        ></div>
+        <svg
+          class="botanical-decor top-right"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 200 200"
+          aria-hidden="true"
+          stroke-width="0.9"
+        >
+          <path d="M15 195 C35 165 60 140 85 115 C110 90 138 70 162 42" />
+          <path d="M52 160 C44 144 40 127 46 112" />
+          <path d="M97 118 C86 102 83 84 89 68" />
+          <path d="M143 77 C134 62 131 46 137 32" />
+          <path d="M46 168 C38 159 34 147 40 138 C49 145 51 157 46 168z" />
+          <path d="M62 153 C70 144 81 142 85 150 C77 157 64 156 62 153z" />
+          <path d="M91 123 C82 113 79 101 86 93 C95 99 97 112 91 123z" />
+          <path
+            d="M107 108 C115 100 126 99 130 106 C122 115 108 114 107 108z"
+          />
+          <path d="M140 83 C131 73 128 61 135 53 C144 59 146 72 140 83z" />
+          <g transform="translate(162,42)">
+            <circle r="4.5" />
+            <ellipse cy="-9" rx="3.5" ry="7" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(72)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(144)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(216)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(288)" />
+          </g>
+          <g transform="translate(46,112)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <g transform="translate(89,68)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <g transform="translate(137,32)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <circle cx="68" cy="143" r="2" />
+          <circle cx="112" cy="100" r="2" />
+          <circle cx="156" cy="57" r="2" />
         </svg>
-        <svg class="botanical-decor top-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" stroke-width="0.9">
-          <path d="M15 195 C35 165 60 140 85 115 C110 90 138 70 162 42"/>
-          <path d="M52 160 C44 144 40 127 46 112"/>
-          <path d="M97 118 C86 102 83 84 89 68"/>
-          <path d="M143 77 C134 62 131 46 137 32"/>
-          <path d="M46 168 C38 159 34 147 40 138 C49 145 51 157 46 168z"/>
-          <path d="M62 153 C70 144 81 142 85 150 C77 157 64 156 62 153z"/>
-          <path d="M91 123 C82 113 79 101 86 93 C95 99 97 112 91 123z"/>
-          <path d="M107 108 C115 100 126 99 130 106 C122 115 108 114 107 108z"/>
-          <path d="M140 83 C131 73 128 61 135 53 C144 59 146 72 140 83z"/>
-          <g transform="translate(162,42)"><circle r="4.5"/><ellipse cy="-9" rx="3.5" ry="7"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(72)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(144)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(216)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(288)"/></g>
-          <g transform="translate(46,112)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <g transform="translate(89,68)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <g transform="translate(137,32)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <circle cx="68" cy="143" r="2"/><circle cx="112" cy="100" r="2"/><circle cx="156" cy="57" r="2"/>
+        <svg
+          class="botanical-decor top-left"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 200 200"
+          aria-hidden="true"
+          stroke-width="0.9"
+        >
+          <path d="M15 195 C35 165 60 140 85 115 C110 90 138 70 162 42" />
+          <path d="M52 160 C44 144 40 127 46 112" />
+          <path d="M97 118 C86 102 83 84 89 68" />
+          <path d="M143 77 C134 62 131 46 137 32" />
+          <path d="M46 168 C38 159 34 147 40 138 C49 145 51 157 46 168z" />
+          <path d="M62 153 C70 144 81 142 85 150 C77 157 64 156 62 153z" />
+          <path d="M91 123 C82 113 79 101 86 93 C95 99 97 112 91 123z" />
+          <path
+            d="M107 108 C115 100 126 99 130 106 C122 115 108 114 107 108z"
+          />
+          <path d="M140 83 C131 73 128 61 135 53 C144 59 146 72 140 83z" />
+          <g transform="translate(162,42)">
+            <circle r="4.5" />
+            <ellipse cy="-9" rx="3.5" ry="7" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(72)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(144)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(216)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(288)" />
+          </g>
+          <g transform="translate(46,112)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <g transform="translate(89,68)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <g transform="translate(137,32)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <circle cx="68" cy="143" r="2" />
+          <circle cx="112" cy="100" r="2" />
+          <circle cx="156" cy="57" r="2" />
         </svg>
         <div class="inner">
           <h2>Venues</h2>
@@ -353,22 +670,68 @@
 
       <!-- GALLERY -->
       <section class="section dark" id="gallery">
-        <div class="floral-bg" aria-hidden="true" style="background-image:url('assets/floral_leaves.jpg');--floral-pos:center 60%;--floral-opacity:0.1;"></div>
-        <svg class="botanical-decor top-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" stroke-width="0.9">
-          <path d="M15 195 C35 165 60 140 85 115 C110 90 138 70 162 42"/>
-          <path d="M52 160 C44 144 40 127 46 112"/>
-          <path d="M97 118 C86 102 83 84 89 68"/>
-          <path d="M143 77 C134 62 131 46 137 32"/>
-          <path d="M46 168 C38 159 34 147 40 138 C49 145 51 157 46 168z"/>
-          <path d="M62 153 C70 144 81 142 85 150 C77 157 64 156 62 153z"/>
-          <path d="M91 123 C82 113 79 101 86 93 C95 99 97 112 91 123z"/>
-          <path d="M107 108 C115 100 126 99 130 106 C122 115 108 114 107 108z"/>
-          <path d="M140 83 C131 73 128 61 135 53 C144 59 146 72 140 83z"/>
-          <g transform="translate(162,42)"><circle r="4.5"/><ellipse cy="-9" rx="3.5" ry="7"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(72)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(144)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(216)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(288)"/></g>
-          <g transform="translate(46,112)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <g transform="translate(89,68)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <g transform="translate(137,32)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <circle cx="68" cy="143" r="2"/><circle cx="112" cy="100" r="2"/><circle cx="156" cy="57" r="2"/>
+        <div
+          class="floral-bg"
+          aria-hidden="true"
+          style="
+            background-image: url(&quot;assets/floral_leaves.jpg&quot;);
+            --floral-pos: center 60%;
+            --floral-opacity: 0.1;
+          "
+        ></div>
+        <svg
+          class="botanical-decor top-right"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 200 200"
+          aria-hidden="true"
+          stroke-width="0.9"
+        >
+          <path d="M15 195 C35 165 60 140 85 115 C110 90 138 70 162 42" />
+          <path d="M52 160 C44 144 40 127 46 112" />
+          <path d="M97 118 C86 102 83 84 89 68" />
+          <path d="M143 77 C134 62 131 46 137 32" />
+          <path d="M46 168 C38 159 34 147 40 138 C49 145 51 157 46 168z" />
+          <path d="M62 153 C70 144 81 142 85 150 C77 157 64 156 62 153z" />
+          <path d="M91 123 C82 113 79 101 86 93 C95 99 97 112 91 123z" />
+          <path
+            d="M107 108 C115 100 126 99 130 106 C122 115 108 114 107 108z"
+          />
+          <path d="M140 83 C131 73 128 61 135 53 C144 59 146 72 140 83z" />
+          <g transform="translate(162,42)">
+            <circle r="4.5" />
+            <ellipse cy="-9" rx="3.5" ry="7" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(72)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(144)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(216)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(288)" />
+          </g>
+          <g transform="translate(46,112)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <g transform="translate(89,68)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <g transform="translate(137,32)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <circle cx="68" cy="143" r="2" />
+          <circle cx="112" cy="100" r="2" />
+          <circle cx="156" cy="57" r="2" />
         </svg>
         <div class="inner">
           <h2>A few frames</h2>
@@ -439,58 +802,158 @@
             );
           "
         ></div>
-        <div class="floral-bg" aria-hidden="true" style="background-image:url('assets/floral_marigold.jpg');--floral-pos:center 50%;--floral-opacity:0.09;"></div>
+        <div
+          class="floral-bg"
+          aria-hidden="true"
+          style="
+            background-image: url(&quot;assets/floral_marigold.jpg&quot;);
+            --floral-pos: center 50%;
+            --floral-opacity: 0.09;
+          "
+        ></div>
         <!-- Lotus watermark -->
-        <svg class="botanical-decor center-watermark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" aria-hidden="true" stroke-width="0.8">
-          <path d="M150 145 C140 118 135 92 150 65 C165 92 160 118 150 145z"/>
-          <path d="M150 145 C169 128 184 110 198 86 C176 72 158 98 150 145z"/>
-          <path d="M150 145 C131 128 116 110 102 86 C124 72 142 98 150 145z"/>
-          <path d="M150 145 C178 142 200 134 214 112 C200 92 178 108 150 145z"/>
-          <path d="M150 145 C122 142 100 134 86 112 C100 92 122 108 150 145z"/>
-          <path d="M150 145 C185 150 208 158 220 180 C204 200 182 192 150 145z"/>
-          <path d="M150 145 C115 150 92 158 80 180 C96 200 118 192 150 145z"/>
-          <path d="M150 145 C180 166 192 182 190 208 C167 220 154 202 150 145z"/>
-          <path d="M150 145 C120 166 108 182 110 208 C133 220 146 202 150 145z"/>
-          <circle cx="150" cy="145" r="20"/>
-          <circle cx="150" cy="145" r="10"/>
-          <path d="M108 165 C85 158 68 143 63 122 C87 118 107 134 108 165z"/>
-          <path d="M192 165 C215 158 232 143 237 122 C213 118 193 134 192 165z"/>
-          <line x1="150" y1="165" x2="150" y2="245"/>
-          <path d="M118 202 C130 196 143 193 150 202"/>
-          <path d="M182 218 C170 212 157 209 150 218"/>
-          <path d="M60 250 Q150 242 240 250" stroke-opacity="0.5"/>
+        <svg
+          class="botanical-decor center-watermark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 300 300"
+          aria-hidden="true"
+          stroke-width="0.8"
+        >
+          <path d="M150 145 C140 118 135 92 150 65 C165 92 160 118 150 145z" />
+          <path d="M150 145 C169 128 184 110 198 86 C176 72 158 98 150 145z" />
+          <path d="M150 145 C131 128 116 110 102 86 C124 72 142 98 150 145z" />
+          <path
+            d="M150 145 C178 142 200 134 214 112 C200 92 178 108 150 145z"
+          />
+          <path d="M150 145 C122 142 100 134 86 112 C100 92 122 108 150 145z" />
+          <path
+            d="M150 145 C185 150 208 158 220 180 C204 200 182 192 150 145z"
+          />
+          <path d="M150 145 C115 150 92 158 80 180 C96 200 118 192 150 145z" />
+          <path
+            d="M150 145 C180 166 192 182 190 208 C167 220 154 202 150 145z"
+          />
+          <path
+            d="M150 145 C120 166 108 182 110 208 C133 220 146 202 150 145z"
+          />
+          <circle cx="150" cy="145" r="20" />
+          <circle cx="150" cy="145" r="10" />
+          <path d="M108 165 C85 158 68 143 63 122 C87 118 107 134 108 165z" />
+          <path
+            d="M192 165 C215 158 232 143 237 122 C213 118 193 134 192 165z"
+          />
+          <line x1="150" y1="165" x2="150" y2="245" />
+          <path d="M118 202 C130 196 143 193 150 202" />
+          <path d="M182 218 C170 212 157 209 150 218" />
+          <path d="M60 250 Q150 242 240 250" stroke-opacity="0.5" />
         </svg>
-        <svg class="botanical-decor top-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" stroke-width="0.9">
-          <path d="M15 195 C35 165 60 140 85 115 C110 90 138 70 162 42"/>
-          <path d="M52 160 C44 144 40 127 46 112"/>
-          <path d="M97 118 C86 102 83 84 89 68"/>
-          <path d="M143 77 C134 62 131 46 137 32"/>
-          <path d="M46 168 C38 159 34 147 40 138 C49 145 51 157 46 168z"/>
-          <path d="M62 153 C70 144 81 142 85 150 C77 157 64 156 62 153z"/>
-          <path d="M91 123 C82 113 79 101 86 93 C95 99 97 112 91 123z"/>
-          <path d="M107 108 C115 100 126 99 130 106 C122 115 108 114 107 108z"/>
-          <path d="M140 83 C131 73 128 61 135 53 C144 59 146 72 140 83z"/>
-          <g transform="translate(162,42)"><circle r="4.5"/><ellipse cy="-9" rx="3.5" ry="7"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(72)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(144)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(216)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(288)"/></g>
-          <g transform="translate(46,112)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <g transform="translate(89,68)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <g transform="translate(137,32)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <circle cx="68" cy="143" r="2"/><circle cx="112" cy="100" r="2"/><circle cx="156" cy="57" r="2"/>
+        <svg
+          class="botanical-decor top-right"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 200 200"
+          aria-hidden="true"
+          stroke-width="0.9"
+        >
+          <path d="M15 195 C35 165 60 140 85 115 C110 90 138 70 162 42" />
+          <path d="M52 160 C44 144 40 127 46 112" />
+          <path d="M97 118 C86 102 83 84 89 68" />
+          <path d="M143 77 C134 62 131 46 137 32" />
+          <path d="M46 168 C38 159 34 147 40 138 C49 145 51 157 46 168z" />
+          <path d="M62 153 C70 144 81 142 85 150 C77 157 64 156 62 153z" />
+          <path d="M91 123 C82 113 79 101 86 93 C95 99 97 112 91 123z" />
+          <path
+            d="M107 108 C115 100 126 99 130 106 C122 115 108 114 107 108z"
+          />
+          <path d="M140 83 C131 73 128 61 135 53 C144 59 146 72 140 83z" />
+          <g transform="translate(162,42)">
+            <circle r="4.5" />
+            <ellipse cy="-9" rx="3.5" ry="7" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(72)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(144)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(216)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(288)" />
+          </g>
+          <g transform="translate(46,112)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <g transform="translate(89,68)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <g transform="translate(137,32)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <circle cx="68" cy="143" r="2" />
+          <circle cx="112" cy="100" r="2" />
+          <circle cx="156" cy="57" r="2" />
         </svg>
-        <svg class="botanical-decor top-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-hidden="true" stroke-width="0.9">
-          <path d="M15 195 C35 165 60 140 85 115 C110 90 138 70 162 42"/>
-          <path d="M52 160 C44 144 40 127 46 112"/>
-          <path d="M97 118 C86 102 83 84 89 68"/>
-          <path d="M143 77 C134 62 131 46 137 32"/>
-          <path d="M46 168 C38 159 34 147 40 138 C49 145 51 157 46 168z"/>
-          <path d="M62 153 C70 144 81 142 85 150 C77 157 64 156 62 153z"/>
-          <path d="M91 123 C82 113 79 101 86 93 C95 99 97 112 91 123z"/>
-          <path d="M107 108 C115 100 126 99 130 106 C122 115 108 114 107 108z"/>
-          <path d="M140 83 C131 73 128 61 135 53 C144 59 146 72 140 83z"/>
-          <g transform="translate(162,42)"><circle r="4.5"/><ellipse cy="-9" rx="3.5" ry="7"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(72)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(144)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(216)"/><ellipse cy="-9" rx="3.5" ry="7" transform="rotate(288)"/></g>
-          <g transform="translate(46,112)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <g transform="translate(89,68)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <g transform="translate(137,32)"><circle r="3.5"/><ellipse cy="-7" rx="2.5" ry="5.5"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)"/><ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)"/></g>
-          <circle cx="68" cy="143" r="2"/><circle cx="112" cy="100" r="2"/><circle cx="156" cy="57" r="2"/>
+        <svg
+          class="botanical-decor top-left"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 200 200"
+          aria-hidden="true"
+          stroke-width="0.9"
+        >
+          <path d="M15 195 C35 165 60 140 85 115 C110 90 138 70 162 42" />
+          <path d="M52 160 C44 144 40 127 46 112" />
+          <path d="M97 118 C86 102 83 84 89 68" />
+          <path d="M143 77 C134 62 131 46 137 32" />
+          <path d="M46 168 C38 159 34 147 40 138 C49 145 51 157 46 168z" />
+          <path d="M62 153 C70 144 81 142 85 150 C77 157 64 156 62 153z" />
+          <path d="M91 123 C82 113 79 101 86 93 C95 99 97 112 91 123z" />
+          <path
+            d="M107 108 C115 100 126 99 130 106 C122 115 108 114 107 108z"
+          />
+          <path d="M140 83 C131 73 128 61 135 53 C144 59 146 72 140 83z" />
+          <g transform="translate(162,42)">
+            <circle r="4.5" />
+            <ellipse cy="-9" rx="3.5" ry="7" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(72)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(144)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(216)" />
+            <ellipse cy="-9" rx="3.5" ry="7" transform="rotate(288)" />
+          </g>
+          <g transform="translate(46,112)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <g transform="translate(89,68)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <g transform="translate(137,32)">
+            <circle r="3.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(72)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(144)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(216)" />
+            <ellipse cy="-7" rx="2.5" ry="5.5" transform="rotate(288)" />
+          </g>
+          <circle cx="68" cy="143" r="2" />
+          <circle cx="112" cy="100" r="2" />
+          <circle cx="156" cy="57" r="2" />
         </svg>
         <div class="inner narrow">
           <h2>Gifts</h2>
