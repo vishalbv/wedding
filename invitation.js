@@ -320,3 +320,90 @@ setTimeout(() => {
     });
   }
 })();
+
+/* ── CURSOR SPARKLE TRAIL ─────────────────────────────────── */
+(function () {
+  const canvas = document.getElementById("cursorTrail");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  const sparks = [];
+
+  function resize() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener("resize", resize);
+
+  /* Spawn particles on mouse move */
+  document.addEventListener("mousemove", (e) => {
+    const count = 2 + Math.floor(Math.random() * 2);
+    for (let i = 0; i < count; i++) {
+      sparks.push({
+        x:     e.clientX + (Math.random() - 0.5) * 12,
+        y:     e.clientY + (Math.random() - 0.5) * 12,
+        r:     Math.random() * 2.8 + 0.8,
+        alpha: 0.85 + Math.random() * 0.15,
+        vx:    (Math.random() - 0.5) * 1.4,
+        vy:    (Math.random() - 0.5) * 1.4 - 0.7,
+        rot:   Math.random() * Math.PI,
+        drot:  (Math.random() - 0.5) * 0.1,
+        star:  Math.random() < 0.3,
+        decay: 0.016 + Math.random() * 0.024,
+        hue:   18 + Math.random() * 28,
+      });
+    }
+    if (sparks.length > 220) sparks.splice(0, sparks.length - 220);
+  });
+
+  function drawSparkle(x, y, size, rot) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(rot);
+    const outer = size, inner = size * 0.18;
+    ctx.beginPath();
+    for (let k = 0; k < 8; k++) {
+      const angle = (k * Math.PI) / 4;
+      const r = k % 2 === 0 ? outer : inner;
+      const px = Math.cos(angle - Math.PI / 2) * r;
+      const py = Math.sin(angle - Math.PI / 2) * r;
+      k === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+    }
+    ctx.closePath();
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let i = sparks.length - 1; i >= 0; i--) {
+      const s = sparks[i];
+      if (s.alpha <= 0) { sparks.splice(i, 1); continue; }
+
+      ctx.save();
+      ctx.globalAlpha = s.alpha;
+      ctx.fillStyle   = `hsl(${s.hue}, 88%, 72%)`;
+      ctx.shadowColor = `hsl(${s.hue}, 90%, 65%)`;
+      ctx.shadowBlur  = 10;
+
+      if (s.star) {
+        drawSparkle(s.x, s.y, s.r * 2.2, s.rot);
+      } else {
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+
+      s.x     += s.vx;
+      s.y     += s.vy;
+      s.r     *= 0.96;
+      s.rot   += s.drot;
+      s.alpha -= s.decay;
+    }
+
+    requestAnimationFrame(animate);
+  }
+  animate();
+})();

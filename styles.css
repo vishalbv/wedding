@@ -1297,6 +1297,16 @@ ol {
 }
 
 /* ─────────────────────────────────────────────────────────────
+   CURSOR TRAIL CANVAS
+───────────────────────────────────────────────────────────── */
+#cursorTrail {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* ─────────────────────────────────────────────────────────────
    MOUSE ORB
 ───────────────────────────────────────────────────────────── */
 .mouse-orb {
@@ -1686,7 +1696,15 @@ ol {
     margin-bottom: 10px;
   }
   .scratch-inner-hint {
-    font-size: 13px;
+    font-size: 12px;
+  }
+  /* Smaller date text + breathing room inside heart on mobile */
+  .when {
+    font-size: clamp(14px, 4vw, 18px);
+  }
+  .scratch-face {
+    padding-bottom: 26px;
+    padding-top: 10px;
   }
   .tick-single > div {
     min-width: clamp(66px, 16vw, 100px);
@@ -1699,5 +1717,12 @@ ol {
   }
   .tick-triple strong {
     font-size: clamp(13px, 3vw, 17px);
+  }
+}
+
+/* Tablet — groom portrait offset (960px–1100px range) */
+@media (min-width: 769px) and (max-width: 1100px) {
+  .dual-cell:last-child .cell-portrait {
+    left: -600px;
   }
 }
