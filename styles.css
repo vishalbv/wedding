@@ -64,9 +64,17 @@ ol {
 ───────────────────────────────────────────────────────────── */
 .video-bg {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* Lock to small-viewport height (address bar visible).
+     When mobile Chrome hides its bar the vh grows, but svh stays
+     constant — prevents the video from jumping/resizing on scroll. */
+  height: 100vh;    /* fallback for older browsers */
+  height: 100svh;   /* modern: locked to smallest viewport size */
   z-index: 0;
   background: #1a2418;
+  overflow: hidden;
 }
 .video-bg video {
   width: 100%;
