@@ -12,7 +12,7 @@
   --gold: #b87a5e;
   --line: rgba(142, 84, 68, 0.28);
   --script: "Great Vibes", cursive;
-  --display: "Cormorant Garamond", Georgia, serif;
+  --display: "Lora", Georgia, serif;
   --sans: "Outfit", system-ui, sans-serif;
   --max-w: 1200px;
   --pad-x: clamp(20px, 5vw, 72px);

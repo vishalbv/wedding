@@ -4,6 +4,8 @@ window.scrollTo(0, 0);
 document.documentElement.style.overflow = 'hidden';
 document.body.style.overflow = 'hidden';
 
+const VISITED_KEY = 'dv_wedding_visited';
+
 const wedding = {
   bride:     "Deeksha",
   groom:     "Vishal",
@@ -35,16 +37,32 @@ let videoStarted  = false;
 let contentShown  = false;
 
 /* ── TAP TO PLAY ──────────────────────────────────────────── */
-tapScreen.addEventListener("click", () => {
+function startExperience(skipTapAnimation) {
   if (videoStarted) return;
   videoStarted = true;
-  // Start video immediately on tap
+  localStorage.setItem(VISITED_KEY, '1');
+  if (skipTapAnimation && bgVideo.duration) {
+    bgVideo.currentTime = bgVideo.duration * 0.5;
+  } else if (skipTapAnimation) {
+    bgVideo.addEventListener('loadedmetadata', () => { bgVideo.currentTime = bgVideo.duration * 0.5; }, { once: true });
+  }
   bgVideo.play().catch(() => showContent());
-  // Dissolve the DV monogram 2 seconds after tap
-  setTimeout(() => tapInner.classList.add("dissolve"), 2000);
-  // Start wedding music (requires user gesture for AudioContext)
-  if (window.initWeddingMusic) window.initWeddingMusic();
-});
+  if (skipTapAnimation) {
+    // Returning visitor: hide tap screen and reveal content immediately
+    tapScreen.style.display = 'none';
+    showContent();
+  } else {
+    setTimeout(() => tapInner.classList.add("dissolve"), 2000);
+    if (window.initWeddingMusic) window.initWeddingMusic();
+  }
+}
+
+tapScreen.addEventListener("click", () => startExperience(false));
+
+// Returning visitor: skip tap screen entirely
+if (localStorage.getItem(VISITED_KEY)) {
+  startExperience(true);
+}
 
 /* ── VIDEO → CONTENT REVEAL ───────────────────────────────── */
 function showContent() {
@@ -64,11 +82,10 @@ function showContent() {
   // hero text fades in a beat after the content wrapper
   setTimeout(() => {
     heroInner.classList.add("visible");
-    // Unlock scroll once the hero title animation completes (1.3s transition + buffer)
     setTimeout(() => {
       document.documentElement.style.overflow = '';
       document.body.style.overflow = '';
-    }, 1400);
+    }, 300);
   }, 300);
 
   // Repaint scratch canvas — it ran at page load when the section was hidden
