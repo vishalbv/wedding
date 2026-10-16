@@ -317,14 +317,27 @@ setTimeout(() => {
     requestAnimationFrame(step);
   }
 
+  function showMuteBtn() {
+    const btn = document.getElementById("muteBtn");
+    if (btn) btn.classList.add("active");
+  }
+
   window.initWeddingMusic = function () {
     if (started) return;
     started = true;
     audio.play().then(() => {
       fadeIn();
+      setTimeout(showMuteBtn, 1400);
+    }).catch(() => {
+      // Autoplay blocked (no user gesture) — show button so user can tap to start
+      showMuteBtn();
       const btn = document.getElementById("muteBtn");
-      if (btn) setTimeout(() => btn.classList.add("active"), 1400);
-    }).catch(e => console.warn("Audio play failed:", e));
+      if (btn) {
+        btn.addEventListener("click", () => {
+          audio.play().then(fadeIn).catch(() => {});
+        }, { once: true });
+      }
+    });
   };
 
   const btn = document.getElementById("muteBtn");
@@ -335,6 +348,23 @@ setTimeout(() => {
       btn.setAttribute("aria-label", muted ? "Unmute music" : "Mute music");
       audio.volume = muted ? 0 : 0.55;
     });
+  }
+
+  // Returning visitor: try autoplay immediately, retry on every interaction until success
+  if (localStorage.getItem(VISITED_KEY)) {
+    showMuteBtn();
+    function tryPlay() {
+      if (started) return;
+      audio.play().then(() => {
+        started = true;
+        fadeIn();
+        ['scroll', 'click', 'touchstart'].forEach(e => document.removeEventListener(e, tryPlay));
+      }).catch(() => {});
+    }
+    tryPlay();
+    ['scroll', 'click', 'touchstart'].forEach(e =>
+      document.addEventListener(e, tryPlay, { passive: true })
+    );
   }
 })();
 
