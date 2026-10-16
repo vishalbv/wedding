@@ -152,11 +152,13 @@ let revealed     = false;
 
 function heartPath(w, h) {
   ctx.beginPath();
-  ctx.moveTo(w * 0.5, h * 0.9);
-  ctx.bezierCurveTo(w * 0.1, h * 0.62, w * 0.02, h * 0.38, w * 0.16, h * 0.24);
-  ctx.bezierCurveTo(w * 0.26, h * 0.12, w * 0.4, h * 0.14, w * 0.5, h * 0.3);
-  ctx.bezierCurveTo(w * 0.6, h * 0.14, w * 0.74, h * 0.12, w * 0.84, h * 0.24);
-  ctx.bezierCurveTo(w * 0.98, h * 0.38, w * 0.9, h * 0.62, w * 0.5, h * 0.9);
+  ctx.moveTo(w * 0.5, h * 0.96);
+  ctx.bezierCurveTo(w * 0.5, h * 0.96, w * 0.06, h * 0.70, w * 0.06, h * 0.36);
+  ctx.bezierCurveTo(w * 0.06, h * 0.18, w * 0.20, h * 0.06, w * 0.32, h * 0.06);
+  ctx.bezierCurveTo(w * 0.42, h * 0.06, w * 0.48, h * 0.14, w * 0.50, h * 0.24);
+  ctx.bezierCurveTo(w * 0.52, h * 0.14, w * 0.58, h * 0.06, w * 0.68, h * 0.06);
+  ctx.bezierCurveTo(w * 0.80, h * 0.06, w * 0.94, h * 0.18, w * 0.94, h * 0.36);
+  ctx.bezierCurveTo(w * 0.94, h * 0.70, w * 0.5,  h * 0.96, w * 0.5,  h * 0.96);
   ctx.closePath();
 }
 
@@ -169,18 +171,28 @@ function paintCover() {
   ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
   const { width: w, height: h } = rect;
   heartPath(w, h);
-  const g = ctx.createLinearGradient(0, 0, w, h);
-  g.addColorStop(0,    "#fbe5d6");
-  g.addColorStop(0.45, "#c98b6e");
+  // Warm rose-gold gradient matching the site palette
+  const g = ctx.createRadialGradient(w * 0.5, h * 0.38, 0, w * 0.5, h * 0.5, w * 0.65);
+  g.addColorStop(0,    "#f5d9c8");
+  g.addColorStop(0.35, "#d4916a");
+  g.addColorStop(0.70, "#a85840");
   g.addColorStop(1,    "#6e3c2a");
   ctx.fillStyle = g;
   ctx.fill();
   ctx.save();
   ctx.clip();
-  for (let i = 0; i < 90; i++) {
-    ctx.fillStyle = `rgba(255,236,220,${Math.random() * 0.45})`;
+  // Large soft glitter
+  for (let i = 0; i < 60; i++) {
+    ctx.fillStyle = `rgba(255,240,220,${Math.random() * 0.55 + 0.05})`;
     ctx.beginPath();
-    ctx.arc(Math.random() * w, Math.random() * h, Math.random() * 1.6 + 0.3, 0, Math.PI * 2);
+    ctx.arc(Math.random() * w, Math.random() * h, Math.random() * 2.2 + 0.4, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  // Bright specular highlights
+  for (let i = 0; i < 18; i++) {
+    ctx.fillStyle = `rgba(255,255,235,${Math.random() * 0.7 + 0.2})`;
+    ctx.beginPath();
+    ctx.arc(Math.random() * w, Math.random() * h, Math.random() * 1.0 + 0.2, 0, Math.PI * 2);
     ctx.fill();
   }
   ctx.restore();
@@ -199,17 +211,59 @@ function enoughScratched() {
   const d = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
   let clear = 0, total = 0;
   for (let i = 3; i < d.length; i += 32) { total++; if (d[i] < 40) clear++; }
-  return clear / total > 0.42;
+  return clear / total > 0.80;
+}
+
+function launchConfetti() {
+  const rect = scratch.getBoundingClientRect();
+  const cx = rect.left + rect.width / 2;
+  const cy = rect.top + rect.height / 2;
+  const colors = ["#f5d9c8","#d4916a","#b87a5e","#fbe5d6","#fff8ee","#e8c4a0","#a85840"];
+  const container = document.createElement("div");
+  container.style.cssText = "position:fixed;inset:0;pointer-events:none;z-index:9999;overflow:hidden";
+  document.body.appendChild(container);
+
+  for (let i = 0; i < 72; i++) {
+    const el = document.createElement("div");
+    const isCircle = Math.random() > 0.45;
+    const size = Math.random() * 8 + 4;
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const angle = Math.random() * Math.PI * 2;
+    const speed = Math.random() * 320 + 120;
+    const vx = Math.cos(angle) * speed;
+    const vy = Math.sin(angle) * speed - 180;
+    const rot = Math.random() * 720 - 360;
+    const delay = Math.random() * 180;
+
+    el.style.cssText = `
+      position:absolute;
+      left:${cx}px; top:${cy}px;
+      width:${size}px; height:${isCircle ? size : size * 1.5}px;
+      border-radius:${isCircle ? "50%" : "2px"};
+      background:${color};
+      opacity:1;
+      transform:translate(-50%,-50%);
+      transition: transform ${700 + Math.random()*400}ms cubic-bezier(.2,.8,.4,1) ${delay}ms,
+                  opacity ${500 + Math.random()*300}ms ease ${300 + delay}ms;
+    `;
+    container.appendChild(el);
+
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      el.style.transform = `translate(calc(-50% + ${vx}px), calc(-50% + ${vy + 200}px)) rotate(${rot}deg)`;
+      el.style.opacity = "0";
+    }));
+  }
+  setTimeout(() => container.remove(), 1400);
 }
 
 function finishScratch() {
   if (revealed) return;
   revealed = true;
   scratch.classList.add("is-done");
-  if (hintEl) hintEl.classList.add("hidden"); // fade out the inside-heart hint
-  // Reveal timer smoothly after scratch
+  if (hintEl) hintEl.classList.add("hidden");
+  launchConfetti();
   const cr = document.getElementById("countdownReveal");
-  if (cr) setTimeout(() => cr.classList.add("visible"), 250);
+  if (cr) setTimeout(() => cr.classList.add("visible"), 400);
 }
 
 canvas.addEventListener("pointerdown", (e) => {

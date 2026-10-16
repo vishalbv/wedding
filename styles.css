@@ -780,9 +780,9 @@ ol {
 
   pointer-events: none;
   text-align: center;
-  font-family: var(--display);
-  font-style: italic;
-  font-size: clamp(17px, 2.4vw, 24px);
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: clamp(14px, 2vw, 20px);
   line-height: 1.55;
   color: rgba(30, 14, 8, 0.7);
   transition: opacity 0.45s ease;
@@ -801,13 +801,13 @@ ol {
 @keyframes heartGlow {
   0%,
   100% {
-    filter: drop-shadow(0 0 6px rgba(212, 144, 100, 0.45))
-      drop-shadow(0 0 14px rgba(212, 120, 80, 0.22));
+    filter: drop-shadow(0 0 8px rgba(184, 122, 94, 0.5))
+      drop-shadow(0 0 18px rgba(168, 88, 64, 0.25));
   }
   50% {
-    filter: drop-shadow(0 0 14px rgba(230, 160, 110, 0.9))
-      drop-shadow(0 0 30px rgba(212, 130, 80, 0.5))
-      drop-shadow(0 0 50px rgba(200, 100, 60, 0.2));
+    filter: drop-shadow(0 0 18px rgba(212, 150, 110, 0.95))
+      drop-shadow(0 0 36px rgba(184, 100, 70, 0.55))
+      drop-shadow(0 0 60px rgba(184, 122, 94, 0.25));
   }
 }
 .scratch-face,
@@ -828,43 +828,37 @@ ol {
   --ink: #f0dcc8;
   --ink-soft: rgba(240, 210, 180, 0.75);
   color: var(--ink);
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 180'%3E%3Cpath fill='black' d='M100 168C20 110 8 68 28 42 44 22 72 24 100 52 128 24 156 22 172 42 192 68 180 110 100 168z'/%3E%3C/svg%3E")
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='black' d='M50,96 C50,96 6,70 6,36 C6,18 20,6 32,6 C42,6 48,14 50,24 C52,14 58,6 68,6 C80,6 94,18 94,36 C94,70 50,96 50,96Z'/%3E%3C/svg%3E")
     center/100% 100% no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 180'%3E%3Cpath fill='black' d='M100 168C20 110 8 68 28 42 44 22 72 24 100 52 128 24 156 22 172 42 192 68 180 110 100 168z'/%3E%3C/svg%3E")
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='black' d='M50,96 C50,96 6,70 6,36 C6,18 20,6 32,6 C42,6 48,14 50,24 C52,14 58,6 68,6 C80,6 94,18 94,36 C94,70 50,96 50,96Z'/%3E%3C/svg%3E")
     center/100% 100% no-repeat;
-  /* Dark floral background — 8-petal mandala via conic gradient + layered depth */
   background:
-    /* 8-petal flower radiating from center */
-    repeating-conic-gradient(
-      from 22.5deg at 50% 50%,
-      rgba(200, 140, 70, 0.11) 0deg 22.5deg,
-      rgba(200, 140, 70, 0) 22.5deg 45deg
-    ),
-    /* central warm amber glow */
-    radial-gradient(circle at 50% 42%, rgba(160, 70, 30, 0.6), transparent 52%),
-    /* top-left rose accent */
-    radial-gradient(
-        ellipse at 18% 16%,
-        rgba(110, 25, 50, 0.55),
-        transparent 42%
-      ),
-    /* bottom-right plum accent */
-    radial-gradient(ellipse at 82% 84%, rgba(90, 18, 44, 0.55), transparent 42%),
-    /* deep dark rose base */
-    linear-gradient(150deg, #120810 0%, #1e0c18 35%, #260e18 65%, #120810 100%);
+    linear-gradient(rgba(10, 30, 10, 0.52), rgba(10, 30, 10, 0.52)),
+    url("assets/mandala_bg.png") center/cover no-repeat;
 }
 .invited {
   font-family: var(--script);
   font-size: 32px;
   color: #a85a6a;
 }
-.when {
-  font-family: var(--sans);
-  font-size: clamp(22px, 3.2vw, 30px);
-  font-weight: 700;
-  line-height: 1.15;
+.scratch-names {
+  font-family: var(--script);
+  font-size: clamp(18px, 4vw, 26px);
+  font-weight: 400;
+  color: rgba(240, 220, 190, 0.85);
   text-align: center;
-  letter-spacing: 0.01em;
+  margin-bottom: 6px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
+.when {
+  font-family: var(--display);
+  font-size: clamp(17px, 2.5vw, 22px);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 0.02em;
+  margin-top: 8px;
   color: #f0e8da;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
 }
@@ -1720,7 +1714,7 @@ ol {
     margin-bottom: 10px;
   }
   .scratch-inner-hint {
-    font-size: clamp(15px, 4vw, 18px);
+    font-size: clamp(11px, 3.2vw, 14px);
   }
   /* Smaller date text + breathing room inside heart on mobile */
   .when {
