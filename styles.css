@@ -832,9 +832,19 @@ ol {
     center/100% 100% no-repeat;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='black' d='M50,96 C50,96 6,70 6,36 C6,18 20,6 32,6 C42,6 48,14 50,24 C52,14 58,6 68,6 C80,6 94,18 94,36 C94,70 50,96 50,96Z'/%3E%3C/svg%3E")
     center/100% 100% no-repeat;
-  background:
-    linear-gradient(rgba(10, 30, 10, 0.52), rgba(10, 30, 10, 0.52)),
-    url("assets/mandala_bg.png") center/cover no-repeat;
+  position: relative;
+  background: #0a1a0aae;
+}
+.scratch-face::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("assets/mandala_bg.png") center/cover no-repeat;
+  opacity: 0.6;
+}
+.scratch-face > * {
+  position: relative;
+  z-index: 1;
 }
 .invited {
   font-family: var(--script);
@@ -849,10 +859,11 @@ ol {
   text-align: center;
   margin-bottom: 6px;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  margin-top: 8px;
 }
 .when {
   font-family: var(--display);
-  font-size: clamp(17px, 2.5vw, 22px);
+  font-size: clamp(16px, 2.1vw, 20px);
   font-weight: 500;
   font-style: italic;
   line-height: 1.2;
@@ -1719,7 +1730,10 @@ ol {
   }
   /* Smaller date text + breathing room inside heart on mobile */
   .when {
-    font-size: clamp(14px, 4vw, 18px);
+    font-size: clamp(12px, 3.3vw, 16px);
+  }
+  .scratch-names {
+    margin-top: 14px;
   }
   .scratch-face {
     padding-bottom: 26px;
