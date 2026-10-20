@@ -404,6 +404,16 @@ setTimeout(() => {
     });
   }
 
+  // Pause when tab is hidden, resume when visible (unless manually muted)
+  document.addEventListener("visibilitychange", () => {
+    if (!started) return;
+    if (document.hidden) {
+      audio.pause();
+    } else if (!muted) {
+      audio.play().catch(() => {});
+    }
+  });
+
   // Returning visitor: try autoplay immediately, retry on every interaction until success
   if (localStorage.getItem(VISITED_KEY)) {
     showMuteBtn();
