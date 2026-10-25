@@ -3,6 +3,18 @@
   "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/location/wedding",
+      "destination": "https://www.google.com/maps/place/Shri+Chennakeshava+Temple/data=!4m2!3m1!1s0x3bbc3c4b9c3fffff:0x9ef5652e5c75ddfe",
+      "permanent": false
+    },
+    {
+      "source": "/location/reciption",
+      "destination": "https://www.google.com/maps/place/Shanthamurthy+%26+Family/@13.8276359,75.1331318,17z/data=!3m1!4b1!4m6!3m5!1s0x3bbb82a0693b9583:0x236ddacae1ec9989!8m2!3d13.8276359!4d75.1331318!16s%2Fg%2F1q62l71d4",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
